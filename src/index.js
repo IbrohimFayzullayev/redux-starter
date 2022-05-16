@@ -81,4 +81,13 @@ const removing = numbers.filter((n) => n != 2);
 // Updated
 const updated = numbers.map((n) => (n === 2 ? 20 : n));
 
-// Enforcing Immutability
+// Enforcing Immutability -- lesson
+
+let book = { title: "Harry Potter" };
+
+function publish(book) {
+  book.isPublished = true;
+}
+publish(book);
+
+console.log(book);
