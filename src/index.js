@@ -83,11 +83,14 @@ const updated = numbers.map((n) => (n === 2 ? 20 : n));
 
 // Enforcing Immutability -- lesson
 
-let book = { title: "Harry Potter" };
+import { Map } from "immutable";
+
+let book = Map({ title: "Harry Potter" });
 
 function publish(book) {
-  book.isPublished = true;
+  return book.set("isPubished", true);
 }
-publish(book);
+book = publish(book);
 
-console.log(book);
+// console.log(book.get("title"));
+console.log(book.toJS());
